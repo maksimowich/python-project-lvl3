@@ -13,4 +13,3 @@ parser.add_argument('-o', '--output', default=os.path.abspath(os.curdir))
 def main():
     args = parser.parse_args()
     print(download(args.url, args.output))
-    print(args.output)
