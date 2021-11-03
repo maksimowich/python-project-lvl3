@@ -78,7 +78,7 @@ def download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resource
         with open(path_to_dir_of_resources + "/" + resource_name, open_format, encoding="utf-8") as out_file:
             try:
                 out_file.write(
-                    requests.get(parsed_url.scheme + "://" + parsed_url.netloc + parsed_tag_url.path).text)
+                    requests.get(parsed_url.scheme + "://" + parsed_url.netloc + parsed_tag_url.path).text.encode("utf-8"))
             except Exception as e:
                 file_logger.exception("Something wrong with HTTP request for resource")
                 console_logger.critical("Something wrong with HTTP request for resource")

@@ -30,7 +30,7 @@ def download(url, path_to_dir_to_download):
         file_logger.info('Get name for main HTML file')
         html_file_name = get_name(parsed_url, ".html")
         with open(path_to_dir_to_download + "/" + html_file_name, "w", encoding="utf-8") as output_file:
-            output_file.write(soup.prettify())
+            output_file.write(soup.prettify().encode("utf-8"))
         file_logger.info("Main HTML file was downloaded")
         return path_to_dir_to_download + "/" + html_file_name
 
