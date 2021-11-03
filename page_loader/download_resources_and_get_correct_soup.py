@@ -82,4 +82,11 @@ def download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resource
                 console_logger.critical("Something wrong with HTTP request for resource")
                 raise e
         file_logger.info('Resource downloaded')
-        tag["src"] = path_to_dir_of_resources + "/" + resource_name
+        set_new_tag_atribute(tag, path_to_dir_of_resources + "/" + resource_name)
+
+
+def set_new_tag_atribute(tag, new_value):
+    if tag.name == "script" or tag.name == "img":
+        tag["src"] = new_value
+    elif tag.name == "link":
+        tag["href"] = new_value
