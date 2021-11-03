@@ -16,6 +16,7 @@ def download_resources_and_get_correct_soup(parsed_url, response, path_to_dir_to
     dir_of_resources_name = get_name(parsed_url, "_files")
     path_to_dir_of_resources = path_to_dir_to_download + "/" + dir_of_resources_name
     soup = BeautifulSoup(response.text, "html.parser")
+    create_dir_of_resources_if_not_exist(path_to_dir_of_resources)
     file_logger.info("Start making tag cycle")
     for tag in Bar('Processing').iter(soup.find_all(["img", "link", "script"])):
         if tag.name == "script" and tag.get('src') is None:
@@ -58,7 +59,6 @@ def get_parsed_tag_url(tag):
 
 def download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resources_name, parsed_tag_url, parsed_url, tag, session):
     file_logger.info("Enter to download particular resource function")
-    create_dir_of_resources_if_not_exist(path_to_dir_of_resources)
     resource_name = get_resource_name(parsed_tag_url._replace(netloc=parsed_url.netloc))
     open_format = get_open_format(tag.name)
     with open(path_to_dir_of_resources + "/" + resource_name, open_format) as out_file:
