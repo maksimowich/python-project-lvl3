@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import argparse
 import os
+import sys
 
 from page_loader.page_loader import download
 
@@ -12,4 +13,7 @@ parser.add_argument('-o', '--output', default=os.path.abspath(os.curdir))
 
 def main():
     args = parser.parse_args()
-    print(download(args.url, args.output))
+    try:
+        print(download(args.url, args.output))
+    except Exception as e:
+        sys.exit(1)
