@@ -82,4 +82,4 @@ def download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resource
                 console_logger.critical("Something wrong with HTTP request for resource")
                 raise e
         file_logger.info('Resource downloaded')
-        tag["src"] = dir_of_resources_name + "/" + resource_name
+        tag["src"] = path_to_dir_of_resources + "/" + resource_name
