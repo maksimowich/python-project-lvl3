@@ -1,0 +1,28 @@
+2021-11-03 14:27:04,254 - INFO - app_file_logger - Try to make HTTP request
+2021-11-03 14:27:04,257 - INFO - app_file_logger - HTTP response has status 200!
+2021-11-03 14:27:04,257 - INFO - app_file_logger - Entered to the download_resources function
+2021-11-03 14:27:04,258 - INFO - app_file_logger - Start making tag cycle
+2021-11-03 14:27:04,258 - INFO - app_file_logger - Enter to download particular resource function
+2021-11-03 14:27:04,260 - INFO - app_file_logger - Resource downloaded
+2021-11-03 14:27:04,260 - INFO - app_file_logger - Get name for main HTML file
+2021-11-03 14:27:04,261 - INFO - app_file_logger - Main HTML file was downloaded
+2021-11-03 14:27:04,264 - INFO - app_file_logger - Try to make HTTP request
+2021-11-03 14:27:04,267 - INFO - app_file_logger - HTTP response has status 200!
+2021-11-03 14:27:04,267 - INFO - app_file_logger - Entered to the download_resources function
+2021-11-03 14:27:04,268 - INFO - app_file_logger - Start making tag cycle
+2021-11-03 14:27:04,268 - INFO - app_file_logger - Enter to download particular resource function
+2021-11-03 14:27:04,271 - INFO - app_file_logger - Resource downloaded
+2021-11-03 14:27:04,271 - INFO - app_file_logger - Get name for main HTML file
+2021-11-03 14:27:04,272 - INFO - app_file_logger - Main HTML file was downloaded
+2021-11-03 14:27:04,278 - INFO - app_file_logger - Try to make HTTP request
+2021-11-03 14:27:04,280 - INFO - app_file_logger - HTTP response has status 200!
+2021-11-03 14:27:04,280 - INFO - app_file_logger - Entered to the download_resources function
+2021-11-03 14:27:04,281 - INFO - app_file_logger - Start making tag cycle
+2021-11-03 14:27:04,281 - INFO - app_file_logger - Get name for main HTML file
+2021-11-03 14:27:04,281 - INFO - app_file_logger - Main HTML file was downloaded
+2021-11-03 14:27:04,283 - INFO - app_file_logger - Try to make HTTP request
+2021-11-03 14:27:04,286 - INFO - app_file_logger - HTTP response has status 200!
+2021-11-03 14:27:04,287 - INFO - app_file_logger - Entered to the download_resources function
+2021-11-03 14:27:04,287 - INFO - app_file_logger - Start making tag cycle
+2021-11-03 14:27:04,287 - INFO - app_file_logger - Get name for main HTML file
+2021-11-03 14:27:04,287 - INFO - app_file_logger - Main HTML file was downloaded
