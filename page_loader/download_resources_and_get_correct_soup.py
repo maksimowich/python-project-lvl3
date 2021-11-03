@@ -2,6 +2,7 @@ import logging
 import os
 import re
 import requests
+from progress.bar import Bar
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 from page_loader.get_name import get_name
@@ -16,7 +17,7 @@ def download_resources_and_get_correct_soup(parsed_url, response, path_to_dir_to
     path_to_dir_of_resources = path_to_dir_to_download + "/" + dir_of_resources_name
     soup = BeautifulSoup(response.text, "html.parser")
     file_logger.info("Start making tag cycle")
-    for tag in soup.find_all(["img", "link", "script"]):
+    for tag in Bar('Processing').iter(soup.find_all(["img", "link", "script"])):
         if tag.name == "script" and tag.get('src') is None:
             continue
         parsed_tag_url = get_parsed_tag_url(tag)
