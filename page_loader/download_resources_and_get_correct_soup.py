@@ -65,7 +65,7 @@ def download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resource
     file_logger.info("Entered to download particular resource function")
     resource_name = get_resource_name(parsed_tag_url._replace(netloc=parsed_url.netloc))
     open_format = get_open_format(tag.name)
-    with open(path_to_dir_of_resources + "/" + resource_name, open_format) as out_file:
+    with open(path_to_dir_of_resources + "/" + resource_name, open_format, encoding="utf-8") as out_file:
         if open_format == "wb":
             try:
                 out_file.write(
