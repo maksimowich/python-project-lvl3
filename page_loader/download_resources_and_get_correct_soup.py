@@ -70,6 +70,7 @@ def download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resource
             try:
                 out_file.write(
                     session.get(parsed_url.scheme + "://" + parsed_url.netloc + parsed_tag_url.path).content)
+                file_logger.info("Written with wb option")
             except Exception as e:
                 file_logger.exception("Something wrong with HTTP request for resource")
                 console_logger.critical("Something wrong with HTTP request for resource")
@@ -79,6 +80,7 @@ def download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resource
             try:
                 out_file.write(
                     requests.get(parsed_url.scheme + "://" + parsed_url.netloc + parsed_tag_url.path).text)
+                file_logger.info("Written with w option")
             except Exception as e:
                 file_logger.exception("Something wrong with HTTP request for resource")
                 console_logger.critical("Something wrong with HTTP request for resource")
