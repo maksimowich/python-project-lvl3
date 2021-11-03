@@ -54,7 +54,7 @@ def get_open_format(tag_name):
 
 
 def get_parsed_tag_url(tag):
-    if tag.name == "script" or "img":
+    if tag.name == "script" or tag.name == "img":
         return urlparse(tag.get('src'))
     elif tag.name == "link":
         return urlparse(tag.get('href'))
