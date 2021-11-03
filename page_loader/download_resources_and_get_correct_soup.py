@@ -21,8 +21,7 @@ def download_resources_and_get_correct_soup(parsed_url, response, path_to_dir_to
     for tag in Bar('Processing').iter(soup.find_all(["img", "link", "script"])):
         if tag.name == "script" and tag.get('src') is None:
             continue
-        not_parsed_tag_url = get_not_parsed_tag_url(tag)
-        file_logger.info(not_parsed_tag_url)
+        file_logger.info(tag)
         parsed_tag_url = get_parsed_tag_url(tag)
         if parsed_tag_url.netloc == "" or parsed_tag_url.netloc == parsed_url.netloc:
             download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resources_name, parsed_tag_url,
@@ -57,13 +56,6 @@ def get_parsed_tag_url(tag):
         return urlparse(tag.get('src'))
     elif tag.name == "link":
         return urlparse(tag.get('href'))
-
-
-def get_not_parsed_tag_url(tag):
-    if tag.name == "script" or "img":
-        return tag.get('src')
-    elif tag.name == "link":
-        return tag.get('href')
 
 
 def download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resources_name, parsed_tag_url, parsed_url, tag, session):
