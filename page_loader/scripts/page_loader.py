@@ -17,3 +17,4 @@ def main():
         print(download(args.url, args.output))
     except Exception as e:
         sys.exit(1)
+        raise e

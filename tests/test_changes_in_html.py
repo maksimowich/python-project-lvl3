@@ -7,12 +7,12 @@ import pook
 def test_changes_in_html1():
     with open("tests/fixtures/test_changes_in_html1/fixture1", encoding='utf8') as f:
         html = f.read()
-    mock = pook.get(
+    pook.get(
         'https://ru.hexlet.io/courses',
         reply=200,
         response_json=html
     )
-    mock2 = pook.get(
+    pook.get(
         'https://ru.hexlet.io/assets/professions/nodejs.png',
         reply=200,
         response_json=""
@@ -35,22 +35,22 @@ def test_changes_in_html2():
         reply=200,
         response_json=html
     )
-    mock2 = pook.get(
+    pook.get(
         'https://ru.hexlet.io/assets/application.css',
         reply=200,
         response_json=""
     )
-    mock3 = pook.get(
+    pook.get(
         'https://ru.hexlet.io/courses',
         reply=200,
         response_json=""
     )
-    mock4 = pook.get(
+    pook.get(
         'https://ru.hexlet.io/assets/professions/nodejs.png',
         reply=200,
         response_json=""
     )
-    mock5 = pook.get(
+    pook.get(
         'https://ru.hexlet.io/packs/js/runtime.js',
         reply=200,
         response_json=""

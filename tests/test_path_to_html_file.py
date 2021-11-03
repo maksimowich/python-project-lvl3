@@ -27,4 +27,3 @@ def test_path_to_html_file2():
     with tempfile.TemporaryDirectory() as d:
         name_for_html_file = download("https://ru.hexlet.io/courses", d)
         assert os.path.exists(d + "/" + name_for_html_file)
-

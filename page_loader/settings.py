@@ -1,6 +1,3 @@
-import logging.config
-
-
 logger_config = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -8,7 +5,7 @@ logger_config = {
     'formatters': {
         'std_format': {
             'format': '{asctime} - {levelname} - {name} - {message}',
-            'style':  '{'
+            'style': '{'
         }
     },
 
