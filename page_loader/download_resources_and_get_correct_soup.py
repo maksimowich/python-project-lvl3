@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 from page_loader.get_name import get_name
 
+
 file_logger = logging.getLogger('app_file_logger')
 console_logger = logging.getLogger('app_console_logger')
 
@@ -82,7 +83,7 @@ def download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resource
                 console_logger.critical("Something wrong with HTTP request for resource")
                 raise e
     file_logger.info('Resource downloaded')
-    set_new_tag_attribute(tag, path_to_dir_of_resources + "/" + resource_name)
+    set_new_tag_attribute(tag, dir_of_resources_name + "/" + resource_name)
 
 
 def set_new_tag_attribute(tag, new_value):
