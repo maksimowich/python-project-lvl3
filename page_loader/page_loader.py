@@ -32,7 +32,7 @@ def download(url, path_to_dir_to_download):
         with open(path_to_dir_to_download + "/" + html_file_name, "w") as output_file:
             output_file.write(soup.prettify())
         file_logger.info("Main HTML file was downloaded")
-        return path_to_dir_to_download + html_file_name
+        return path_to_dir_to_download + "/" + html_file_name
 
 
 def check_path_for_existence(path):
