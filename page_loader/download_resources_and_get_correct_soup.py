@@ -61,7 +61,7 @@ def get_parsed_tag_url(tag):
 
 
 def download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resources_name, parsed_tag_url, parsed_url, tag, session):
-    file_logger.info("Enter to download particular resource function")
+    file_logger.info("Entered to download particular resource function")
     resource_name = get_resource_name(parsed_tag_url._replace(netloc=parsed_url.netloc))
     open_format = get_open_format(tag.name)
     with open(path_to_dir_of_resources + "/" + resource_name, open_format) as out_file:
@@ -81,8 +81,8 @@ def download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resource
                 file_logger.exception("Something wrong with HTTP request for resource")
                 console_logger.critical("Something wrong with HTTP request for resource")
                 raise e
-        file_logger.info('Resource downloaded')
-        set_new_tag_attribute(tag, path_to_dir_of_resources + "/" + resource_name)
+    file_logger.info('Resource downloaded')
+    set_new_tag_attribute(tag, path_to_dir_of_resources + "/" + resource_name)
 
 
 def set_new_tag_attribute(tag, new_value):
