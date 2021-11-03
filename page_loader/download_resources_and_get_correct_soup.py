@@ -23,7 +23,9 @@ def download_resources_and_get_correct_soup(parsed_url, response, path_to_dir_to
             continue
         file_logger.info(tag)
         parsed_tag_url = get_parsed_tag_url(tag)
+        file_logger.info(parsed_tag_url)
         if parsed_tag_url.netloc == "" or parsed_tag_url.netloc == parsed_url.netloc:
+            file_logger.info("Resource suitable for downloading has been found")
             download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resources_name, parsed_tag_url,
                                                parsed_url, tag, session)
     console_logger.info("Exit of the func download_resources")
