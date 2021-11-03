@@ -22,7 +22,7 @@ def download_resources_and_get_correct_soup(parsed_url, response, path_to_dir_to
         if tag.name == "script" and tag.get('src') is None:
             continue
         not_parsed_tag_url = get_not_parsed_tag_url(tag)
-        file_logger.info("not_parsed_tag_url " + not_parsed_tag_url)
+        file_logger.info(not_parsed_tag_url)
         parsed_tag_url = get_parsed_tag_url(tag)
         if parsed_tag_url.netloc == "" or parsed_tag_url.netloc == parsed_url.netloc:
             download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resources_name, parsed_tag_url,
