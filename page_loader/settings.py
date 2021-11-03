@@ -1,14 +1,12 @@
 logger_config = {
     'version': 1,
     'disable_existing_loggers': False,
-
     'formatters': {
         'std_format': {
             'format': '{asctime} - {levelname} - {name} - {message}',
             'style': '{'
         }
     },
-
     'handlers': {
         'console_handler': {
             'class': 'logging.StreamHandler',
@@ -22,7 +20,6 @@ logger_config = {
             'formatter': 'std_format'
         }
     },
-
     'loggers': {
         'app_console_logger': {
             'level': 'ERROR',
@@ -34,5 +31,4 @@ logger_config = {
             'handlers': ['file_handler']
         }
     }
-
 }

@@ -65,26 +65,15 @@ def download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resource
     file_logger.info("Entered to download particular resource function")
     resource_name = get_resource_name(parsed_tag_url._replace(netloc=parsed_url.netloc))
     open_format = get_open_format(tag.name)
-    if open_format == "wb":
-        with open(path_to_dir_of_resources + "/" + resource_name, open_format) as out_file:
-            try:
-                out_file.write(
-                    session.get(parsed_url.scheme + "://" + parsed_url.netloc + parsed_tag_url.path).content)
-                file_logger.info(f"Written with {open_format} option")
-            except Exception as e:
-                file_logger.exception("Something wrong with HTTP request for resource")
-                console_logger.critical("Something wrong with HTTP request for resource")
-                raise e
-    else:
-        with open(path_to_dir_of_resources + "/" + resource_name, "wb") as out_file:
-            try:
-                out_file.write(
-                    requests.get(parsed_url.scheme + "://" + parsed_url.netloc + parsed_tag_url.path).content)
-                file_logger.info(f"Written with {open_format} option")
-            except Exception as e:
-                file_logger.exception("Something wrong with HTTP request for resource")
-                console_logger.critical("Something wrong with HTTP request for resource")
-                raise e
+    with open(path_to_dir_of_resources + "/" + resource_name, "wb") as out_file:
+        try:
+            out_file.write(
+                requests.get(parsed_url.scheme + "://" + parsed_url.netloc + parsed_tag_url.path).content)
+            file_logger.info(f"Written with {open_format} option")
+        except Exception as e:
+            file_logger.exception("Something wrong with HTTP request for resource")
+            console_logger.critical("Something wrong with HTTP request for resource")
+            raise e
     file_logger.info('Resource downloaded')
     set_new_tag_attribute(tag, dir_of_resources_name + "/" + resource_name)
 
