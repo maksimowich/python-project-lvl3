@@ -76,10 +76,10 @@ def download_resource_and_correct_soup(path_to_dir_of_resources, dir_of_resource
                 console_logger.critical("Something wrong with HTTP request for resource")
                 raise e
     else:
-        with open(path_to_dir_of_resources + "/" + resource_name, open_format, encoding="utf-8-sig") as out_file:
+        with open(path_to_dir_of_resources + "/" + resource_name, "wb") as out_file:
             try:
                 out_file.write(
-                    requests.get(parsed_url.scheme + "://" + parsed_url.netloc + parsed_tag_url.path).text)
+                    requests.get(parsed_url.scheme + "://" + parsed_url.netloc + parsed_tag_url.path).content)
                 file_logger.info(f"Written with {open_format} option")
             except Exception as e:
                 file_logger.exception("Something wrong with HTTP request for resource")
